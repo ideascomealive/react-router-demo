@@ -21,7 +21,7 @@ function Work() {
   return (
     <div>
     	{items.map(item => (
-    		<h1>{item.strDrink}</h1>
+    		<h1 key={item.idDrink}>{item.strDrink}</h1>
     	))}
     </div>
   );
