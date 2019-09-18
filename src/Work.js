@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 function Work() {
 
 	useEffect(() => {
-		fetchDrinks();
+		fetchWorks();
 	}, []);
 
 	const [items, setItems] = useState([]);
 
-	const fetchDrinks = async () => {
+	const fetchWorks = async () => {
 		const data = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka');
 
 		const items = await data.json();
