@@ -4,9 +4,9 @@ import './App.css';
 function Nav() {
   return (
     <nav>
-      <h3>Logo</h3>
+      <h2>Logo</h2>
       <h4>Slogan</h4>
-      <ul>
+      <ul className="nav-items">
       	<li>About</li>
       	<li>Work</li>
       	<li>Testimonials</li>
