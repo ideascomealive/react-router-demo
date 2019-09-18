@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import { Link } from 'react-router-dom';
 
 function Work() {
 
@@ -21,7 +22,11 @@ function Work() {
   return (
     <div>
     	{items.map(item => (
-    		<h1 key={item.idDrink}>{item.strDrink}</h1>
+    		<h1 key={item.idDrink}>
+    			<Link to={`/work/${item.idDrink}`}>
+    				{item.strDrink}
+    			</Link>
+    		</h1>
     	))}
     </div>
   );
