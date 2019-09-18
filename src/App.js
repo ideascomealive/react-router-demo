@@ -5,13 +5,14 @@ import About from './About';
 import Work from './Work';
 import Testimonial from './Testimonial';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-//React router will now allow us to visit the urls and return the component
+//Notice that our root route renders repeatedly regardless of requested resource
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Nav />
+        <Route path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/work" component={Work} />
         <Route path="/testimonials" component={Testimonial} />
@@ -19,5 +20,11 @@ function App() {
     </Router>
   );
 }
+
+const Home = () => (
+  <div>
+    <h1>Home</h1>
+  </div>
+  );
 
 export default App;
