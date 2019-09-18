@@ -7,16 +7,22 @@ function Work() {
 		fetchDrinks();
 	}, []);
 
+	const [items, setItems] = useState([]);
+
 	const fetchDrinks = async () => {
 		const data = await fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka');
-		
+
 		const items = await data.json();
 
-		console.log(items);
+		console.log(items.drinks);
+
+		setItems(items.drinks);
 	}
   return (
     <div>
-      <h1>Work</h1>
+    	{items.map(item => (
+    		<h1>{item.strDrink}</h1>
+    	))}
     </div>
   );
 }
