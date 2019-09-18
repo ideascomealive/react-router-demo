@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
 
-function Work() {
+function WorkDetail() {
 
 	useEffect(() => {
 		fetchDrink();
@@ -11,7 +11,11 @@ function Work() {
 	const [item, setItem] = useState({});
 
 	const fetchDrink = async () => {
-		
+        const fetchDrink = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
+`);
+        const item = await fetchDrink.json();
+
+        console.log(item);
 	};
 
   return (
@@ -21,4 +25,4 @@ function Work() {
   );
 }
 
-export default Work;
+export default WorkDetail;
